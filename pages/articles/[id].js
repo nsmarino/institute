@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import Layout from '../../components/layout'
+import Layout from '../../components/layout/Layout'
 import Date from '../../components/Date'
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 
@@ -53,7 +53,7 @@ export default function Article({ articleData }) {
         {trackProgress()}
       </div>
 
-      <p>{page + 1} / {pages.length}</p>
+      {/* <p>{page + 1} / {pages.length}</p> */}
 
       <div className="contentContainer">
         { page !== 0  && <button onClick={previousPage}>prev</button>}

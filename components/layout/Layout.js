@@ -1,43 +1,49 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
 import Link from 'next/link'
-import Nav from './Nav.js'
 import { useState } from 'react'
+
+import styles from './layout.module.css'
+
+import NavContainer from './NavContainer'
+import SearchContainer from './SearchContainer'
 
 const name = 'the guy yard institute of film studies'
 export const siteTitle = 'the guy yard institute of film studies'
 
 const Header = () => {
-  const [vis, setVis] = useState(false)
+  const [navVis, setNavVis] = useState(false)
+  const [searchVis, setSearchVis] = useState(false)
 
-  const handleClick = () => {
-    console.log('handle click on box')
-    setVis(!vis)
+  const handleNavClick = () => {
+    setNavVis(!navVis)
   }
+
+  const handleSearchClick = () => {
+    setSearchVis(!searchVis)
+  }
+
   return (
     <header className={styles.header}>
-      <div>
-        {/* <Link href="/">
-          <a> */}
-            <div className="box" onClick={handleClick} />        
-          {/* </a>
-        </Link> */}
-        <div className="navContainer">
-        <Nav display={vis} className="nav" />
-        </div>
-      </div>
-
-
-
+      <NavContainer handleClick={handleNavClick} vis={navVis} /> 
 
       <Link href="/">
         <a>
         <h1>Guy Yard Institute of Film Studies</h1>
         </a>
       </Link>
-      <Link href="/">
-        <a>search</a>
-      </Link>
+
+      <SearchContainer handleClick={handleSearchClick} vis={searchVis} />
+    {/* <div>
+      <div 
+        className="box" 
+        onClick={handleSearchClick}
+      />
+      { searchVis && (
+        <div className="searchContainer">
+          <input type="text"/>
+        </div>       
+      )}
+  </div> */}
       <style jsx>{`
         a {
           color: #333;
@@ -57,14 +63,6 @@ const Header = () => {
         }
       `}</style>
     </header>
-  )
-}
-
-const Footer = () => {
-  return (
-    <div>
-    <p>© 2020</p>
-    </div>
   )
 }
 
