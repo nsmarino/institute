@@ -1,35 +1,16 @@
-const SearchContainer = ({ handleClick, vis }) => {
+const SearchContainer = () => {
   return (
-    <div>
-      <div 
-        className="box" 
-        onClick={handleClick}
-      />
-      { vis && (
-        <div className="searchContainer">
-          <input type="text" className="search" placeholder="search..." />
-        </div>       
-      )}
+    <div className="searchContainer">
+      <input type="text" className="search" placeholder="search..." />        
     <style jsx>{`
-        a {
-          color: #333;
-          text-decoration: none;
-        }
-
-        .box {
-          background: #333;
-          width: 1em;
-          height: 1em;
-        }
-        .searchContainer {
-          position: fixed;
-        }
+      .searchContainer {
+        width: 15em;
+        display: flex;
+        flex-direction: row-reverse;
+      }
         .search {
           margin: 0;
           padding: 0;
-
-          position: absolute;
-          right: -1em;
 
           background-color: #F9F5E9;
 
@@ -38,10 +19,9 @@ const SearchContainer = ({ handleClick, vis }) => {
           border-bottom: 1px solid #333;
           
           height: 2em;
-
         }
       `}</style>
-  </div>
+    </div>
   )
 }
 

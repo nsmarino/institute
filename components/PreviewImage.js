@@ -1,23 +1,27 @@
 const PreviewImage = ({ image }) => {
   return (
-  <div className="imgContainer">
-    {image ?
+  <>
+  <div className="repl"></div>
+    {/* {image ?
       <img
         src={image.source}
         alt={image.name}
       />
     :
       null
-    }
+    } */}
     <style jsx>{`
-    .imgContainer {
-        width: 20em;
-    }
-    img {
-        width: 20em;
-    }
+      .repl {
+        background: darkred;
+        width: 50rem;
+        height: 20rem;
+      }
+      img {
+        flex: 2 0 auto;
+        width: 50rem;
+      }
     `}</style>
-  </div>
+  </>
   )
 }
 

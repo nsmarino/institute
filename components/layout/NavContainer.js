@@ -2,7 +2,7 @@ import Nav from './Nav'
 
 const NavContainer = ({ handleClick, vis }) => {
   return (
-  <div>
+  <div className="navBoxContainer">
     <div 
       className="box" 
       onClick={handleClick}
@@ -17,25 +17,29 @@ const NavContainer = ({ handleClick, vis }) => {
       </div>       
     )}
     <style jsx>{`
-
+    .navBoxContainer {
+        width: 15em;
+      }
         .box {
           background: #333;
-          width: 1em;
-          height: 1em;
+          width: 1.5em;
+          height: 1.5em;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: center;
           align-items: center;
         }
         .lineOne {
-          width: .8em;
-          height: .08em;
+          width: 1em;
+          height: .15em;
           background: #F9F5E9;
+          margin: .125em;
         }
         .lineTwo {
-          width: .8em;
-          height: .01em;
+          width: 1em;
+          height: .05em;
           background: #F9F5E9;
+          margin: .125em;
         }
         .navContainer {
           position: fixed;

@@ -32,7 +32,7 @@ export default function Home({ allArticleData}) {
 
         <ArticleList 
           articleData={allArticleData} 
-          handleHover={handleHover} 
+          handleHover={handleHover}
         />
 
         <PreviewImage image={image} />
@@ -41,10 +41,12 @@ export default function Home({ allArticleData}) {
     </Layout>
     <style jsx>{`
       .indexContainer {
-        border: 1px solid black;
         display: flex;
         justify-content: space-between;
+        width: 75rem;
+        border: 1px solid black;
       }
+      
     `}</style>
   </div>
   )

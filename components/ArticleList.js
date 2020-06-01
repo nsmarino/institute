@@ -1,6 +1,7 @@
 import Card from './Card'
 
 const ArticleList = ({ articleData, handleHover }) => {
+  console.log()
   return (
     <div className="articleList">
       <ul>
@@ -12,6 +13,8 @@ const ArticleList = ({ articleData, handleHover }) => {
           />)}
       </ul>
       <style jsx>{`
+        flex: 1 0 auto;
+        max-width: 25rem;
         ul {
           list-style-type: none;
           padding: 0;
