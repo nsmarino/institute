@@ -1,27 +1,41 @@
+//framework:
 import Head from 'next/head'
-
+import { useState } from 'react'
+import styles from './article.module.css'
+//components:
 import Layout from '../../components/layout/Layout'
 import Date from '../../components/Date'
+import ImageModal from '../../components/ImageModal'
+//utilities:
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 
-import { useState } from 'react'
-
-import styles from './article.module.css'
-
 export default function Article({ articleData }) {
-  const [page, setPage] = useState(0)
-  console.log(articleData.contentHtml)
-  const pages = articleData.contentHtml.split("^")
-  console.log(pages)
 
+  const [page, setPage] = useState(0)
+  const [imageVis, setImageVis] = useState(false)
+
+  const pages = articleData.contentHtml
+    .split("^")
+    .map(pageStr => {
+      const imgStr = pageStr.substring(
+        pageStr.indexOf('<img'),
+        pageStr.indexOf('</p>')
+      )
+      const textStr = pageStr.substring(
+        pageStr.indexOf('<h3')
+      )
+      return {image: imgStr, text: textStr}
+    })
+
+  // for page navigation
   const nextPage = () => {
     setPage(page + 1)
+    setImageVis(false)
   }
-
   const previousPage = () => {
-    if (page !== 0) setPage(page - 1)
+    setPage(page - 1)
+    setImageVis(false)
   }
-
   const trackProgress = () => {
     const progressBoxes = pages.map(p=>
     pages.indexOf(p) === page ? 
@@ -37,6 +51,11 @@ export default function Article({ articleData }) {
     )
     return progressBoxes
   }
+
+  const displayImg = () => {
+    setImageVis(!imageVis)
+  }
+
   return (
     <Layout>
       <Head>
@@ -53,19 +72,22 @@ export default function Article({ articleData }) {
         {trackProgress()}
       </div>
 
-      {/* <p>{page + 1} / {pages.length}</p> */}
-
       <div className="contentContainer">
-        { page !== 0  && <button onClick={previousPage}>prev</button>}
+        { page !== 0  && <button onClick={previousPage} className="btn">🡄</button>}
         <div 
-          dangerouslySetInnerHTML={{ __html: pages[page] }}
+          dangerouslySetInnerHTML={{ __html: pages[page].text }}
           className={styles.articleContent}
         />
-        { page !== pages.length - 1  && <button onClick={nextPage}>next</button>}
+        { page !== pages.length - 1  && <button onClick={nextPage} className="btn">🡆</button>}
       </div>
-      <div className="sceneImageContainer">
+      <button className="imgToggle" onClick={displayImg}>img</button>
 
-      </div>
+      {
+        imageVis ?      
+        <ImageModal image={pages[page].image} />
+        :
+        null
+      }
 
       <style jsx>{`
         color: #333;        
@@ -78,18 +100,26 @@ export default function Article({ articleData }) {
         }
         .contentContainer {
           display: flex;
+
+          border: 1px solid blue;
         }
-        .sceneImageContainer {
+        .imgToggle {
           background: linear-gradient(#333, #F9F5E9);
           border: .25em solid #333;
           width: 2em;
           height: 2em;
         }
         .progress {
-          border: 1px solid red;
           display: flex;
           align-items: center;
           flex-wrap: wrap;
+        }
+        .btn {
+          border: none;
+          background: white;
+          width: 2em;
+          height: 2em;
+          align-self: center;
         }
       `}
       </style>

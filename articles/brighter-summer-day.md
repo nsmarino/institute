@@ -7,15 +7,21 @@ blurb: 'Im so cool and so young...'
 image: '/images/brightersummer.jpg'
 
 ---
+<div markdown="1">
 
 ![A Brighter Summer Day](/images/brightersummer.jpg)
+
+### Scene 1
+
 An image from the film.
-^
-![A Brighter Summer Day](/images/brightersummer.jpg)
-This is the second section of the article.
-^
-![A Brighter Summer Day](/images/brightersummer.jpg)
-It was directed by Edward Yang.
-^
-![A Brighter Summer Day](/images/brightersummer.jpg)
-Any questions?
+
+What can be said? Everything is totally cool.
+</div>^
+<div markdown="1">
+
+![A Brighter Summer Day](/images/mauvais.jpg)
+
+### Scene 2
+
+Another image can be found by clicking on the box.
+</div>

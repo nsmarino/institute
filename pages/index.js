@@ -1,6 +1,6 @@
 // NEXT/REACT -
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, Component } from 'react'
 
 // COMPONENTS -
 import Layout from '../components/layout/Layout'
@@ -61,3 +61,23 @@ export async function getStaticProps() {
     }
   }
 }
+
+
+// next:
+// create imageModal component, attach w wire
+// to toggle-box. 
+// fix homepage so preview image is properly placed
+// at full scale -- subtle arrows on sides.
+// it would be cool to have a "scrub" preview on progress bar?...
+// a bar that fills up as you go thru pages. it has the title of film
+// when you hover you can preview the different images
+// honestly starting to wonder if even for myself a cms would be better
+// the markdown stuff is getting kind of weird
+
+// 1. image modal box
+// 2. fix index TOC and preview image.
+// 3. fix header
+// 4. add sub-header progress bar (decide about cms)
+// 5. tighten up article styling
+// 6. tighten up index styling
+// 7. refactor, clean up, assess.
