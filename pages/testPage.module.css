@@ -1,0 +1,6 @@
+.block {
+    background: lightgrey;
+    margin: .5em;
+    flex-grow: 1;
+    height: 1em;
+}

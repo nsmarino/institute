@@ -3,8 +3,8 @@ title: 'The Wind Rises (2013)'
 date: '2020-02-01'
 author: 'Guy Yard'
 featured: true
-blurb: 'Im so cool and so young...'
-image: '/images/windrises.jpg'
+tags: 'Im so cool and so young...' # tags for collections
+image: '/images/windrises.jpg' #rename "preview"
 
 ---
 

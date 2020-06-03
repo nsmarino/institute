@@ -1,7 +1,6 @@
 import Card from './Card'
 
 const ArticleList = ({ articleData, handleHover }) => {
-  console.log()
   return (
     <div className="articleList">
       <ul>

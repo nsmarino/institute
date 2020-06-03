@@ -10,7 +10,6 @@ import ImageModal from '../../components/ImageModal'
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 
 export default function Article({ articleData }) {
-
   const [page, setPage] = useState(0)
   const [imageVis, setImageVis] = useState(false)
 
