@@ -10,6 +10,7 @@ import ImageModal from '../../components/ImageModal'
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 
 export default function Article({ articleData }) {
+  // console.log(articleData)
   const [page, setPage] = useState(0)
   const [imageVis, setImageVis] = useState(false)
 
@@ -134,6 +135,7 @@ export async function getStaticPaths() {
     fallback: false
   }
 }
+
 
 export async function getStaticProps({ params }) {
   const articleData = await getArticleData(params.id)

@@ -1,6 +1,6 @@
 // NEXT/REACT -
 import Head from 'next/head'
-import { useState, Component } from 'react'
+import { useState } from 'react'
 
 // COMPONENTS -
 import Layout from '../components/layout/Layout'
@@ -9,8 +9,11 @@ import ArticleList from '../components/ArticleList'
 
 // INTERNAL LIBRARIES -
 import { getSortedArticleData } from '../lib/articles'
+import { getTestDataForIndex, getTestPageIds } from '../lib/testLib'
 
-export default function Home({ allArticleData}) {
+export default function Home({ allArticleData, testPaths}) {
+  console.log(testPaths)
+
   const [image, setImage] = useState(null)
 
   const handleHover = (article) => {
@@ -55,9 +58,16 @@ export default function Home({ allArticleData}) {
 // with data, and mark this page to be statically generated at build time
 export async function getStaticProps() {
   const allArticleData = getSortedArticleData()
+
+
+  const testData = getTestDataForIndex()
+  const testPaths = getTestPageIds()
+
   return {
     props: {
-      allArticleData
+      allArticleData,
+      testData,
+      testPaths,
     }
   }
 }
