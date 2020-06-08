@@ -1,3 +1,5 @@
+// FOR REFERENCE ONLY -
+
 //framework:
 import Head from 'next/head'
 import { useState } from 'react'
@@ -9,7 +11,7 @@ import ImageModal from '../../components/ImageModal'
 //utilities:
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 
-export default function Article({ articleData }) {
+function Article({ articleData }) {
   // console.log(articleData)
   const [page, setPage] = useState(0)
   const [imageVis, setImageVis] = useState(false)

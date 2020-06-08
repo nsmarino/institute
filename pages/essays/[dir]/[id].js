@@ -1,13 +1,17 @@
 // import utility functions
 
-import { getTestPageIds, getTestPageData } from "../../lib/testLib"
+import { getTestPageIds, getTestPageData } from "../../../lib/essayLib"
+
+import styles from './essay.module.css'
+
 
 export default function TestPage({ testData }) {
     console.log(testData)
     return (
-        <div>
-            <h1>{testData.title}</h1>
-        </div>
+        <div 
+          dangerouslySetInnerHTML={{ __html: testData.contentHtml }}
+          className={styles.essayContent}
+        />
     )
 }
 

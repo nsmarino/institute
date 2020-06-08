@@ -5,24 +5,33 @@ import { useState } from 'react'
 // COMPONENTS -
 import Layout from '../components/layout/Layout'
 import PreviewImage from '../components/PreviewImage'
-import ArticleList from '../components/ArticleList'
+import Card from '../components/Card'
 
 // INTERNAL LIBRARIES -
-import { getSortedArticleData } from '../lib/articles'
-import { getTestDataForIndex, getTestPageIds } from '../lib/testLib'
+import { EssayDataForIndex } from '../lib/essayLib'
 
-export default function Home({ allArticleData, testPaths}) {
-  console.log(testPaths)
+export default function Home({ allEssayData }) {
 
   const [image, setImage] = useState(null)
 
-  const handleHover = (article) => {
+  const handleHover = (essay) => {
     const image = {
-      source: article.image,
-      name: 'article.title'
+      source: essay.image,
+      name: `${essay.title}`
     }
     setImage(image)
   }
+
+  const listOfLinks = () => {
+    const links = allEssayData.map(essay => 
+      <Card 
+        essay={essay}
+        handleHover={handleHover} 
+        key={`${essay.dir}.${essay.id}`} 
+      />)
+      return links
+  }
+
 
   return (
     <div className="container">
@@ -33,14 +42,14 @@ export default function Home({ allArticleData, testPaths}) {
     <Layout>
       <div className="indexContainer">
 
-        <ArticleList 
-          articleData={allArticleData} 
-          handleHover={handleHover}
-        />
+        <div className="studiesLinks">
+        {listOfLinks()}
+      </div>
 
         <PreviewImage image={image} />
 
       </div>
+
     </Layout>
     <style jsx>{`
       .indexContainer {
@@ -54,40 +63,20 @@ export default function Home({ allArticleData, testPaths}) {
   </div>
   )
 }
-// this function will fill the `props` of the above component
-// with data, and mark this page to be statically generated at build time
+
 export async function getStaticProps() {
-  const allArticleData = getSortedArticleData()
-
-
-  const testData = getTestDataForIndex()
-  const testPaths = getTestPageIds()
-
+  const allEssayData = EssayDataForIndex()
   return {
     props: {
-      allArticleData,
-      testData,
-      testPaths,
+      allEssayData,
     }
   }
 }
 
+// - To Do -
+// 1. refactor out all traces of 'articles'
+// 2. essay page functionality - arrows to move, timeline component
+// 3. clean up index page - flexbox (esp header), handleHover
+// 4. clean up essay pages, figure out how this useEffect stuff will work
+// 5. assess, polish, start filling with demo content?
 
-// next:
-// create imageModal component, attach w wire
-// to toggle-box. 
-// fix homepage so preview image is properly placed
-// at full scale -- subtle arrows on sides.
-// it would be cool to have a "scrub" preview on progress bar?...
-// a bar that fills up as you go thru pages. it has the title of film
-// when you hover you can preview the different images
-// honestly starting to wonder if even for myself a cms would be better
-// the markdown stuff is getting kind of weird
-
-// 1. image modal box
-// 2. fix index TOC and preview image.
-// 3. fix header
-// 4. add sub-header progress bar (decide about cms)
-// 5. tighten up article styling
-// 6. tighten up index styling
-// 7. refactor, clean up, assess.

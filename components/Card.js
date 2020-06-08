@@ -1,11 +1,12 @@
 import Link from 'next/link'
 
-export default function Card({ article, handleHover }) {
+export default function Card({ essay, handleHover }) {
+  console.log(essay)
   return (
-    <div onMouseOver={() => handleHover(article)}>
+    <div onMouseOver={() => handleHover(essay)}>
       <li>
-        <Link href='/articles/[id]' as={`/articles/${article.id}`}>
-          <a>{article.title}</a>       
+        <Link href='essays/[dir]/[id]' as={`essays/${essay.dir}/${essay.id}`}>
+          <a>{essay.title}</a>       
         </Link>
       </li>
       <style jsx>{`
