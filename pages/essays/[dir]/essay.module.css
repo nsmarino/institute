@@ -1,3 +1,29 @@
 .essayContent {
     border: 1px solid black;
 }
+
+.block {
+    background: lightgrey;
+    margin: .5em;
+    flex-grow: 1;
+    height: 1em;
+}
+
+.currentBlock {
+    background: pink;
+    margin: .5em;
+    flex-grow: 1;
+    height: 1em;
+}
+
+.nav {
+    display: flex;
+    width: 100vw;
+    border: 1px solid blue;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+.thumbnail {
+    width: 5em;
+}

@@ -20,6 +20,7 @@ export default function Home({ allEssayData }) {
       name: `${essay.title}`
     }
     setImage(image)
+    console.log(image)
   }
 
   const listOfLinks = () => {
