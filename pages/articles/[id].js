@@ -12,7 +12,6 @@ import ImageModal from '../../components/ImageModal'
 import { getAllArticleIds, getArticleData } from '../../lib/articles'
 
 function Article({ articleData }) {
-  // console.log(articleData)
   const [page, setPage] = useState(0)
   const [imageVis, setImageVis] = useState(false)
 

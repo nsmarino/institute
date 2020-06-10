@@ -1,63 +1,59 @@
+// Framework:
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../../../components/layout/Layout'
 
-import { useState } from 'react'
-
-import { getEssayPageIds, getEssayPageData, getEssayNavData } from "../../../lib/essayLib"
-
+// Styling:
 import styles from './essay.module.css'
 
+// Components:
+import Layout from '../../../components/layout/Layout'
+import Timeline from '../../../components/Timeline'
+
+// helpers:
+import { getEssayPageIds, getEssayPageData, getEssayNavData } from "../../../lib/essayLib"
+
 export default function EssayPage({ essayData, navData }) {
-    const [preview, setPreview] = useState(null)
-    console.log('essay data', essayData)
-    console.log('nav data', navData)
+  const currentPageIndex = navData.findIndex(page => page.id===essayData.id)
+    
+  const previousPage = currentPageIndex !== 0 ?
+    navData[currentPageIndex - 1].id
+      :
+    null
+    
+  const nextPage = currentPageIndex !== navData.length - 1 ?
+    navData[currentPageIndex + 1].id
+      :
+    null
 
-    const handleNavHover = (block) => {
-        setPreview(block)
-    }
+  return (
+  <div>
+  <Head>
+    <title>{essayData.title}</title>
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
+  <Layout>
+    <Timeline essayData={essayData} navData={navData} />
 
-    const showNav = () => {
-      return navData.map(block =>
-        <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${block.id}`}>
-        <div 
-        className={block.id === essayData.id ? styles.currentBlock : styles.block} 
-        key={block.id}
-        onMouseOver={() => handleNavHover(block.image)}
-        >
-        </div>
-        </Link>
-      )
-    }
+    { previousPage ?
+      <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
+        <a>previous</a>
+      </Link>  
+      : null }
 
-    return (
-    <div>
-      <Head>
-        <title>{essayData.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      {/* PAGE CONTENT: */}
+      <div 
+        dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}
+        className={styles.essayContent}
+      />
 
-      <div className={styles.nav}>
-        {showNav()}
-      </div>
-      <Layout>
-
-      { preview ?
-        <img src={preview} alt="guy yard" className={styles.thumbnail} />
-       :
-        null
-      }
-<button>previous</button>
-        <div 
-          dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}
-          className={styles.essayContent}
-        /> 
-        <button>next</button>     
-      </Layout>
-
-
-        </div>
-    )
+    { nextPage ?
+      <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${nextPage}`}>
+        <a>next</a>
+      </Link>
+      : null }
+  </Layout>
+  </div>
+  )
 }
 
 export async function getStaticPaths() {

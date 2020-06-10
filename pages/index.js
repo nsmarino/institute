@@ -20,7 +20,6 @@ export default function Home({ allEssayData }) {
       name: `${essay.title}`
     }
     setImage(image)
-    console.log(image)
   }
 
   const listOfLinks = () => {
@@ -74,10 +73,13 @@ export async function getStaticProps() {
   }
 }
 
-// - To Do -
-// 1. refactor out all traces of 'articles'
-// 2. essay page functionality - arrows to move, timeline component
-// 3. clean up index page - flexbox (esp header), handleHover
-// 4. clean up essay pages, figure out how this useEffect stuff will work
-// 5. assess, polish, start filling with demo content?
+// 6/10/2020 Goals for the next few days:
+// 1. attach links to prev/next buttons [✓ 6/10/20]
+// 2. refactor timeline into own component [✓ 6/10/20]
+// 3. set up dummy essay data -- 5 films with 5 parts plus info page
+// 4. header css
+// 5. index css
+// 6. essay page css incl. timeline css (!)
+// 7. responsive design
+// 8. image optimization
 

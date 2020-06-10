@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 export default function Card({ essay, handleHover }) {
-  console.log(essay)
   return (
     <div onMouseOver={() => handleHover(essay)}>
       <li>
