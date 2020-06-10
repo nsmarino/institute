@@ -13,6 +13,9 @@ import Timeline from '../../../components/Timeline'
 import { getEssayPageIds, getEssayPageData, getEssayNavData } from "../../../lib/essayLib"
 
 export default function EssayPage({ essayData, navData }) {
+  
+  console.log(navData)
+  
   const currentPageIndex = navData.findIndex(page => page.id===essayData.id)
     
   const previousPage = currentPageIndex !== 0 ?

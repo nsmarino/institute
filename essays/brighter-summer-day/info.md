@@ -2,8 +2,8 @@
 title: 'a brighter summer day'
 date: '2020-01-05'
 author: 'Guy Yard'
-blurb: 'Im so cool and so young...'
-image: '/images/brightersummer.jpg'
+sort: 1
+image: '/images/brighter-summer-day/brightersummer.jpg'
 ---
 
-INFO PAGE
+INFO PAGE...Film, year, country, runtime?, director, stars...brief synopsis?
