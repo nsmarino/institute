@@ -1,5 +1,5 @@
 ---
-title: 'a brighter summer day'
+title: 'A Brighter Summer Day (1991)'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 1

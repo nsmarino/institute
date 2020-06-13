@@ -1,5 +1,5 @@
 ---
-title: 'the wind rises'
+title: 'The Wind Rises (2013)'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 1

@@ -5,6 +5,13 @@ import styles from './Timeline.module.css'
 
 export default function Timeline({essayData, navData}) {
   const [preview, setPreview] = useState(null)
+  const [previewLocation, setPreviewLocation] = useState('')
+
+
+  const updateMouseX = e => {
+    const location = window.innerWidth - e.clientX < 100 ? window.innerWidth - 100 : e.clientX
+    setPreviewLocation(location)
+  }
 
   const handleNavHover = (block) => {
     setPreview(block)
@@ -16,6 +23,7 @@ export default function Timeline({essayData, navData}) {
         <div 
           className={block.id === essayData.id ? styles.currentBlock : styles.block} 
           onMouseOver={() => handleNavHover(block)}
+          onMouseMove={() => updateMouseX(event)}
         >
         </div>
       </Link>
@@ -24,9 +32,26 @@ export default function Timeline({essayData, navData}) {
 
   return (
     <div>
-      {showTimeline()}
+      <div className={styles.navContainer}>
+
+        <div className={styles.nav} onMouseOut={()=> setPreview(null)}>
+          {showTimeline()}
+        </div>
+
+        <div className={styles.filmTitle}>
+          <h2 >title of film</h2>
+        </div>
+        
+
+      </div>
+
+
+
+
       { preview ?
+      <div className={styles.thumbnailContainer} style={{left: previewLocation,}}>
         <img src={preview.image} alt={preview.alt} className={styles.thumbnail} />
+      </div>
           :
         null
       }

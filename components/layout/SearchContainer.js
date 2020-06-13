@@ -4,9 +4,9 @@ const SearchContainer = () => {
       <input type="text" className="search" placeholder="search..." />        
     <style jsx>{`
       .searchContainer {
-        width: 15em;
         display: flex;
         flex-direction: row-reverse;
+        width: 20em;
       }
         .search {
           margin: 0;
@@ -18,7 +18,9 @@ const SearchContainer = () => {
           border-radius: 0;
           border-bottom: 1px solid #333;
           
-          height: 2em;
+          height: 1.5em;
+          width: 20em;
+          padding-left: 1em;
         }
       `}</style>
     </div>

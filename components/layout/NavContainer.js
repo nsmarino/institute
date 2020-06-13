@@ -18,10 +18,10 @@ const NavContainer = ({ handleClick, vis }) => {
     )}
     <style jsx>{`
     .navBoxContainer {
-        width: 15em;
+      width: 20em;
       }
         .box {
-          background: #333;
+          background: #F9F5E9;
           width: 1.5em;
           height: 1.5em;
           display: flex;
@@ -32,13 +32,13 @@ const NavContainer = ({ handleClick, vis }) => {
         .lineOne {
           width: 1em;
           height: .15em;
-          background: #F9F5E9;
+          background: #333;
           margin: .125em;
         }
         .lineTwo {
           width: 1em;
           height: .05em;
-          background: #F9F5E9;
+          background: #333;
           margin: .125em;
         }
         .navContainer {
@@ -53,3 +53,5 @@ const NavContainer = ({ handleClick, vis }) => {
 }
 
 export default NavContainer
+
+//;

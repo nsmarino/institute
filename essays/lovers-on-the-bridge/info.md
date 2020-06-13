@@ -1,5 +1,5 @@
 ---
-title: 'lovers on the bridge'
+title: 'Lovers on the Bridge (1991)'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 1

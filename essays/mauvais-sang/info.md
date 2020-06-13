@@ -1,9 +1,9 @@
 ---
-title: 'mauvais sang'
+title: 'Mauvais Sang (1986)'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 1
-image: '/images/lovers-on-the-bridge/lovers-on-the-bridge.jpg'
+image: '/images/mauvais-sang/mauvais.jpg'
 ---
 
 Est ullamco nulla ad ipsum consequat fugiat pariatur deserunt. Et magna voluptate Lorem duis excepteur qui aliqua sint anim irure cupidatat laborum. Proident mollit exercitation est ipsum esse. Reprehenderit non aute nostrud eiusmod labore exercitation ex ex tempor ut est exercitation aute. Dolore duis anim ullamco nisi fugiat occaecat ex voluptate ut commodo officia proident.

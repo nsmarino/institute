@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Card({ essay, handleHover }) {
+export default function IndexLink({ essay, handleHover }) {
   return (
     <div onMouseOver={() => handleHover(essay)}>
       <li>
@@ -9,6 +9,10 @@ export default function Card({ essay, handleHover }) {
         </Link>
       </li>
       <style jsx>{`
+        li {
+          list-style-type: none;
+          line-height: 2.5em;
+        }
         a {
           color: black;
           text-decoration: none;
