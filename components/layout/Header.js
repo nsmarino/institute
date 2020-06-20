@@ -6,12 +6,7 @@ import styles from './header.module.css'
 import NavContainer from './NavContainer'
 import SearchContainer from './SearchContainer'
 
-const Header = () => {
-  const [navVis, setNavVis] = useState(false)
-  
-  const handleNavClick = () => {
-    setNavVis(!navVis)
-  }
+const Header = ({ navVis, handleNavClick }) => {
   
   return (
     <header className={styles.header}>

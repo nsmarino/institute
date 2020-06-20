@@ -7,9 +7,10 @@ export default function Timeline({essayData, navData}) {
   const [preview, setPreview] = useState(null)
   const [previewLocation, setPreviewLocation] = useState('')
 
+  console.log(navData)
 
   const updateMouseX = e => {
-    const location = window.innerWidth - e.clientX < 100 ? window.innerWidth - 100 : e.clientX
+    const location = window.innerWidth - e.clientX < 50 ? window.innerWidth - 100 : e.clientX - 50
     setPreviewLocation(location)
   }
 
@@ -39,7 +40,7 @@ export default function Timeline({essayData, navData}) {
         </div>
 
         <div className={styles.filmTitle}>
-          <h2 >title of film</h2>
+          <h2 >{navData[0].alt}</h2>
         </div>
         
 

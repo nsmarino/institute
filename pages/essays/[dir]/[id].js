@@ -13,9 +13,6 @@ import Timeline from '../../../components/Timeline'
 import { getEssayPageIds, getEssayPageData, getEssayNavData } from "../../../lib/essayLib"
 
 export default function EssayPage({ essayData, navData }) {
-  
-  console.log(navData)
-  
   const currentPageIndex = navData.findIndex(page => page.id===essayData.id)
     
   const previousPage = currentPageIndex !== 0 ?
@@ -33,30 +30,37 @@ export default function EssayPage({ essayData, navData }) {
   <Head>
     <title>{essayData.title}</title>
     <link rel="icon" href="/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"></link>
   </Head>
   <Layout>
     <Timeline essayData={essayData} navData={navData} />
 
-    { previousPage ?
-      <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
-        <a>previous</a>
-      </Link>  
-      : null }
-
-      {/* PAGE CONTENT: */}
-      <div 
-        dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}
-        className={styles.essayContent}
-      />
-
-    { nextPage ?
-      <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${nextPage}`}>
-        <a>next</a>
-      </Link>
-      : null }
-  </Layout>
+<div className={styles.essayGrid}>
+  <div className={styles.stickyBtn}>
+  { previousPage ?
+    <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
+      <a>previous</a>
+    </Link>  
+  : null }
   </div>
-  )
+
+  {/* PAGE CONTENT: */}
+    <div 
+    dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}
+    className={styles.essayContent}
+    />
+    
+  <div className={styles.next}>
+  { nextPage ?
+    <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${nextPage}`}>
+      <a>next</a>
+    </Link>
+    : null } 
+    </div>  
+</div>
+</Layout>
+</div>
+)
 }
 
 export async function getStaticPaths() {

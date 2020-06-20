@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+import { useState } from 'react'
 import styles from './layout.module.css'
 
 import Header from './Header'
@@ -7,8 +7,22 @@ import Header from './Header'
 export const siteTitle = 'Center for temporal film studies'
 
 export default function Layout({ children }) {
+  const [navVis, setNavVis] = useState(false)
+
+  const handleNavClick = () => {
+    setNavVis(!navVis)
+  }
+
+  const handleAppClick = (e) => {
+    console.log(e.target)
+    if (e.target.classList.contains('box') 
+        || e.target.classList.contains('lineOne') 
+        || e.target.classList.contains('lineTwo')) return;
+    setNavVis(false)
+  }
+
   return (
-    <div>
+    <div onClickCapture={handleAppClick}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -20,7 +34,7 @@ export default function Layout({ children }) {
       </Head>
 
       <div className={styles.app}>
-      <Header />
+      <Header navVis={navVis} handleNavClick={handleNavClick} />
       <main className={styles.container}>{children}</main>
       </div>
     </div>

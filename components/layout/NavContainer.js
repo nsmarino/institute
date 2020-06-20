@@ -42,9 +42,6 @@ const NavContainer = ({ handleClick, vis }) => {
           margin: .125em;
         }
         .navContainer {
-          position: fixed;
-        }
-        .nav {
           position: absolute;
         }
       `}</style>

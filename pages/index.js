@@ -108,24 +108,16 @@ export async function getStaticProps() {
   }
 }
 
-// 6/10/2020 Goals for the next few days:
 // 1. attach links to prev/next buttons [✓ 6/10/20]
 // 2. refactor timeline into own component [✓ 6/10/20]
 // 3. set up dummy essay data -- 5 films with 5 parts plus info page [✓ 6/10/20]
 // 4. header css [✓ 6/13/20]
 // 5. index css and preview image [✓ 6/13/20]
-
-// 6/13/20
-// 6. essay page css incl. timeline css (!)
-
-// 6/14/20
-// 7. responsive design
-
-// 6/15/20
-// 8. more dummy data -- many images
-// 9. image optimization
-
-// 6/16/20
-// 10. collections and about page
-// 11. clean up, iterate, refactor...how to organize css?
+// 6. timeline css [✓ 6/13/20]
+// 7. essay css - text portion (margins and font), next/prev buttons
+// 8. responsive design
+// 9. more dummy data -- many images
+// 10. image optimization
+// 11. collections and about page
+// 12. clean up, iterate, refactor...how to organize css?
 

@@ -5,7 +5,7 @@ author: 'Guy Yard'
 sort: 5
 image: '/images/mauvais-sang/juliette.jpg'
 ---
-
+![image test](/images/mauvais-sang/juliette.jpg)
 Eu adipisicing exercitation consectetur sit eu officia. Duis culpa tempor amet consectetur veniam incididunt culpa. Est do magna veniam reprehenderit laborum amet exercitation excepteur sint quis ullamco exercitation. Quis aute nostrud eu magna mollit nisi minim ipsum id sit sint ut Lorem.
 
 Minim adipisicing culpa sit cupidatat ipsum ad qui tempor nostrud sunt. Consectetur Lorem commodo reprehenderit esse ullamco dolore incididunt qui sunt. Ut deserunt voluptate elit in in ad fugiat aliquip. Occaecat ad occaecat incididunt quis eu officia excepteur non veniam deserunt ullamco.

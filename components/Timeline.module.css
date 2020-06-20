@@ -9,11 +9,11 @@
 }
 
 .block:hover {
-    background: whitesmoke;
+    background: #999;
 }
 
 .currentBlock {
-    background: whitesmoke;
+    background: #999;
     flex-grow: 1;
     height: 2em;
 }
