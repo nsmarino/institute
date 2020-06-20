@@ -1,29 +1,3 @@
-.block {
-    background: lightgrey;
-    margin: .5em;
-    flex-grow: 1;
-    height: 1em;
-}
-
-.currentBlock {
-    background: pink;
-    margin: .5em;
-    flex-grow: 1;
-    height: 1em;
-}
-
-.nav {
-    display: flex;
-    width: 100vw;
-    border: 1px solid blue;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-.thumbnail {
-    width: 5em;
-}
-
 .essayGrid {
     display: grid;
     grid-template-columns: 25% 50% 25%;
@@ -40,34 +14,23 @@
     width: 100%;
 }
 
-.stickyBtn {
-    color: white;
-    background-color: #222;
-    position: fixed;
-    top: 50%;
-    left: 10%;
-}
-
 .previous {
     color: white;
     background-color: #222;
     position: fixed;
     top: 50%;
     left: 10%;
-
-  /* grid-column-start: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .next {
-  grid-column-start: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
+  background-color: #222;
+  position: fixed;
+  top: 50%;
+  left: 90%;
 }
 
-.previous:hover, .next:hover {
-    filter: drop-shadow(16px 16px 20px red) invert(75%);
+.previous a, .next a {
+    color: white;
+    font-size: large;
 }

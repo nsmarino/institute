@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import styles from './header.module.css'
 
@@ -7,7 +7,7 @@ import NavContainer from './NavContainer'
 import SearchContainer from './SearchContainer'
 
 const Header = ({ navVis, handleNavClick }) => {
-  
+
   return (
     <header className={styles.header}>
 

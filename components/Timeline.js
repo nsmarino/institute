@@ -1,13 +1,33 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import styles from './Timeline.module.css'
 
 export default function Timeline({essayData, navData}) {
+  const [sticky, setSticky] = useState(false)
+  const ref = useRef()
   const [preview, setPreview] = useState(null)
   const [previewLocation, setPreviewLocation] = useState('')
 
-  console.log(navData)
+  const handleScroll = () => {
+    if (ref.current) {
+      if (ref.current.getBoundingClientRect().top <= 0) {
+        setSticky(true)
+      }
+      if (window.scrollY < 32) {
+        setSticky(false)
+      }
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    };
+  }, []);
+
 
   const updateMouseX = e => {
     const location = window.innerWidth - e.clientX < 50 ? window.innerWidth - 100 : e.clientX - 50
@@ -32,17 +52,12 @@ export default function Timeline({essayData, navData}) {
     }
 
   return (
-    <div>
+    <div ref={ref} className={sticky ? styles.sticky : ''} onMouseLeave={() => setPreview(null)} >
       <div className={styles.navContainer}>
 
-        <div className={styles.nav} onMouseOut={()=> setPreview(null)}>
+        <div className={styles.nav}>
           {showTimeline()}
         </div>
-
-        <div className={styles.filmTitle}>
-          <h2 >{navData[0].alt}</h2>
-        </div>
-        
 
       </div>
 
@@ -50,7 +65,7 @@ export default function Timeline({essayData, navData}) {
 
 
       { preview ?
-      <div className={styles.thumbnailContainer} style={{left: previewLocation,}}>
+      <div className={styles.thumbnailContainer} style={{left: previewLocation,}} onClick={() => console.log(preview)} >
         <img src={preview.image} alt={preview.alt} className={styles.thumbnail} />
       </div>
           :

@@ -1,6 +1,7 @@
 // Framework:
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 // Styling:
 import styles from './essay.module.css'
@@ -36,7 +37,7 @@ export default function EssayPage({ essayData, navData }) {
     <Timeline essayData={essayData} navData={navData} />
 
 <div className={styles.essayGrid}>
-  <div className={styles.stickyBtn}>
+  <div className={styles.previous}>
   { previousPage ?
     <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
       <a>previous</a>

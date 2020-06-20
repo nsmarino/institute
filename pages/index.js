@@ -114,7 +114,7 @@ export async function getStaticProps() {
 // 4. header css [✓ 6/13/20]
 // 5. index css and preview image [✓ 6/13/20]
 // 6. timeline css [✓ 6/13/20]
-// 7. essay css - text portion (margins and font), next/prev buttons
+// 7. essay css - text portion (margins and font), next/prev buttons, sticky header
 // 8. responsive design
 // 9. more dummy data -- many images
 // 10. image optimization
