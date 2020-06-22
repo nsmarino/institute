@@ -1,7 +1,6 @@
 // Framework:
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRef } from 'react'
 
 // Styling:
 import styles from './essay.module.css'
@@ -44,7 +43,6 @@ export default function EssayPage({ essayData, navData }) {
     </Link>  
   : null }
   </div>
-
   {/* PAGE CONTENT: */}
     <div 
     dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}

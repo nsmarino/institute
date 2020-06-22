@@ -45,8 +45,9 @@ export default function Home({ allEssayData }) {
           </ul>
       </div>
 
-      <div className="imageContainer">
-        {image ?
+<div className="containerBorder">
+      <div className="imageContainer" style={{ backgroundImage: `url(${image.source})`, opacity: '0.25', backgroundPosition: 'center', backgroundSize: '100%', backgroundRepeat: 'no-repeat'}}>
+        {/* {image ?
         <img
         className="previewImage"
         src={image.source}
@@ -54,7 +55,8 @@ export default function Home({ allEssayData }) {
         />
         :
         null
-        }
+        } */}
+      </div>
       </div>
 
     </div>
@@ -64,7 +66,7 @@ export default function Home({ allEssayData }) {
     display: grid;   
   }
 
-  .linkContainer, .imageContainer {
+  .linkContainer, .imageContainer, .containerBorder {
       grid-column: 1;
       grid-row: 1;
     }
@@ -74,10 +76,14 @@ export default function Home({ allEssayData }) {
       margin-left: 5em;
     }
 
+.containerBorder {
+  border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
   .imageContainer {
     display: flex;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    width: 75rem;
+    height: 40rem;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -114,10 +120,16 @@ export async function getStaticProps() {
 // 4. header css [✓ 6/13/20]
 // 5. index css and preview image [✓ 6/13/20]
 // 6. timeline css [✓ 6/13/20]
-// 7. essay css - text portion (margins and font), next/prev buttons, sticky header
+
+// - timeline refinement with js
+// - next/previous buttons -- settle on a design that works at various screen sizes, / swipes
+// - header dropdown on scroll, so only timeline is sticky. could be cool.
+// - revisit grid system for content once next/prev buttons are settled
+// - make collections page -- will this be better layout than current index? more 'mobile-first'
+
 // 8. responsive design
 // 9. more dummy data -- many images
 // 10. image optimization
-// 11. collections and about page
-// 12. clean up, iterate, refactor...how to organize css?
+// 11. about page
+// 12. clean up, iterate, refactor...how to organize css? MAKE VERY CLEAN! COMMENTS AND D.R.Y.!
 

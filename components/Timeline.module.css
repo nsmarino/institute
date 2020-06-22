@@ -35,30 +35,35 @@
     opacity: .2;
   }
 
-.filmTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.filmTitle h2 {
-    color: #333;
-    margin: 0;
-    padding: 0;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-
 .thumbnailContainer {
-  background-color: #333;
+  /* background-color: #333; */
   width: 100px;
   position: absolute;
+  /* top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.markerFlexbox {
+  width: 100px;
+  height: 2rem;
+  position: absolute;
+  top: -2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.marker {
+  width: .25rem;
+  height: 2rem;
+  background-color: #333;
 }
 
 .thumbnail {
-  width: 100px;
+  width: 300px;
   padding-top: 1em;
+  background-color: #333;
 }
 
 .sticky {

@@ -1,3 +1,4 @@
+
 .essayGrid {
     display: grid;
     grid-template-columns: 25% 50% 25%;
@@ -20,6 +21,10 @@
     position: fixed;
     top: 50%;
     left: 10%;
+}
+
+.previous:hover {
+    background:  linear-gradient(#e66465, #9198e5);
 }
 
 .next {
