@@ -1,0 +1,52 @@
+.card {
+    width: 25rem;
+    height: 14rem;
+    color: white;
+    display: grid;
+    border: 2px solid #333;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cardImage {
+    width: 100%;
+    opacity: .25;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cardTitle {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 99;
+    text-align: center;
+}
+
+.cardTitle a {
+    color: #333;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.hoverImage {
+    width: 100%;
+    opacity: .75;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.hoverTitle {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 99;
+    text-align: center;
+}
+
+.hoverTitle a {
+    color: #F9F5E9;
+    text-decoration: none;
+    font-size: 3rem;
+}

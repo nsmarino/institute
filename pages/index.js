@@ -5,6 +5,7 @@ import { useState } from 'react'
 // COMPONENTS -
 import Layout from '../components/layout/Layout'
 import IndexLink from '../components/IndexLink'
+import Card from '../components/Card'
 
 // INTERNAL LIBRARIES -
 import { EssayDataForIndex } from '../lib/essayLib'
@@ -45,23 +46,30 @@ export default function Home({ allEssayData }) {
           </ul>
       </div>
 
-<div className="containerBorder">
-      <div className="imageContainer" style={{ backgroundImage: `url(${image.source})`, opacity: '0.25', backgroundPosition: 'center', backgroundSize: '100%', backgroundRepeat: 'no-repeat'}}>
-        {/* {image ?
-        <img
-        className="previewImage"
-        src={image.source}
-        alt={image.name}
-        />
-        :
-        null
-        } */}
-      </div>
-      </div>
+    <div className="containerBorder">
+      <div className="imageContainer" 
+        style={{ 
+          backgroundImage: `url(${image.source})`, 
+          opacity: '0.25', 
+          backgroundPosition: 'center', 
+          backgroundSize: '100%', 
+          backgroundRepeat: 'no-repeat'
+          }
+        }
+      ></div>
+    </div>
 
     </div>
+    {allEssayData.map(essay => <Card essay={essay} key={essay.title} />)}
   </Layout>
     <style jsx>{`
+
+      .testDiv {
+        width: 20rem;
+        height: 20rem;
+        background: blue;
+      }
+
   .indexContainer {
     display: grid;   
   }
