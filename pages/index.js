@@ -1,35 +1,14 @@
 // NEXT/REACT -
 import Head from 'next/head'
-import { useState } from 'react'
 
 // COMPONENTS -
 import Layout from '../components/layout/Layout'
-import IndexLink from '../components/IndexLink'
 import Card from '../components/Card'
 
 // INTERNAL LIBRARIES -
 import { EssayDataForIndex } from '../lib/essayLib'
 
 export default function Home({ allEssayData }) {
-  const [image, setImage] = useState({source: '/images/taipei-story/taipei-story.jpg', name: null})
-
-  const handleHover = (essay) => {
-    const image = {
-      source: essay.image,
-      name: `${essay.title}`
-    }
-    setImage(image)
-  }
-
-  const listOfLinks = () => {
-    const links = allEssayData.map(essay => 
-      <IndexLink 
-        essay={essay}
-        handleHover={handleHover} 
-        key={`${essay.dir}.${essay.id}`} 
-      />)
-      return links
-  }
 
   return (
     <div className="container">
@@ -38,77 +17,19 @@ export default function Home({ allEssayData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <Layout>
-      <div className="indexContainer">
-
-        <div className="linkContainer">
-          <ul>
-          {listOfLinks()}
-          </ul>
+      <div className="cardFlex">
+        {allEssayData.map(essay => <Card essay={essay} key={essay.title} />)}
       </div>
+    </Layout>
 
-    <div className="containerBorder">
-      <div className="imageContainer" 
-        style={{ 
-          backgroundImage: `url(${image.source})`, 
-          opacity: '0.25', 
-          backgroundPosition: 'center', 
-          backgroundSize: '100%', 
-          backgroundRepeat: 'no-repeat'
-          }
-        }
-      ></div>
-    </div>
-
-    </div>
-    {allEssayData.map(essay => <Card essay={essay} key={essay.title} />)}
-  </Layout>
-    <style jsx>{`
-
-      .testDiv {
-        width: 20rem;
-        height: 20rem;
-        background: blue;
+    <style jsx>{` 
+      .cardFlex {
+        display: flex;
+        width: 75em;
+        flex-wrap: wrap;
       }
-
-  .indexContainer {
-    display: grid;   
-  }
-
-  .linkContainer, .imageContainer, .containerBorder {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    .linkContainer {
-      z-index: 99;
-      margin-left: 5em;
-    }
-
-.containerBorder {
-  border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
-}
-  .imageContainer {
-    display: flex;
-    width: 75rem;
-    height: 40rem;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    }
-  
-  .previewImage {
-    filter: opacity(25%);
-    }
-
-@media only screen and (min-width: 800px) {
-  .previewImage {
-    width: 75rem;
-    }
-  }
-
-      
     `}</style>
+
   </div>
   )
 }
@@ -129,7 +50,7 @@ export async function getStaticProps() {
 // 5. index css and preview image [✓ 6/13/20]
 // 6. timeline css [✓ 6/13/20]
 
-// - timeline refinement with js
+// - timeline refinement with js [✓ 6/24/20]
 // - next/previous buttons -- settle on a design that works at various screen sizes, / swipes
 // - header dropdown on scroll, so only timeline is sticky. could be cool.
 // - revisit grid system for content once next/prev buttons are settled

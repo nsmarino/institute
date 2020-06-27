@@ -5,8 +5,16 @@ const Nav = () => {
   <div className="nav">
     <ul>
       <li>
+        <input type="text" placeholder="search..." className="search" />
+      </li>
+      <li>
         <Link href="/about">
           <a>about the institute</a>
+        </Link>
+      </li>
+      <li>
+      <Link href="/all">
+          <a>all films</a>
         </Link>
       </li>
       <li>
@@ -37,6 +45,21 @@ const Nav = () => {
         }
         a:hover {
           background-color: #ebe7dd
+        }
+
+        .search {
+          margin: 0;
+          padding: 0;
+
+          background-color: #F9F5E9;
+
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid #333;
+          
+          height: 1.5em;
+          width: 11em;
+          padding-left: 1em;
         }
       `}</style>
   </div>
