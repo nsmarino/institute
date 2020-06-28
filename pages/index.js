@@ -25,7 +25,8 @@ export default function Home({ allEssayData }) {
     <style jsx>{` 
       .cardFlex {
         display: flex;
-        width: 75em;
+        justify-content: center;
+        max-width: 75em;
         flex-wrap: wrap;
       }
     `}</style>

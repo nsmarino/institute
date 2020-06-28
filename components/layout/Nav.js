@@ -1,11 +1,18 @@
 import Link from 'next/link'
 
+import styles from './nav.module.css'
+
 const Nav = () => {
   return (
   <div className="nav">
     <ul>
       <li>
         <input type="text" placeholder="search..." className="search" />
+      </li>
+      <li>
+        <Link href="/">
+          <a>home</a>
+        </Link>
       </li>
       <li>
         <Link href="/about">

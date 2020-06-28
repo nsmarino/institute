@@ -3,8 +3,9 @@ title: 'lovers on the bridge | scene 1'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 4
-image: '/images/lovers-on-the-bridge/lovers-on-the-bridge.jpg'
+image: '/images/lovers-on-the-bridge/burn.png'
 ---
+![image test](/images/lovers-on-the-bridge/burn.png)
 
 Eu adipisicing exercitation consectetur sit eu officia. Duis culpa tempor amet consectetur veniam incididunt culpa. Est do magna veniam reprehenderit laborum amet exercitation excepteur sint quis ullamco exercitation. Quis aute nostrud eu magna mollit nisi minim ipsum id sit sint ut Lorem.
 

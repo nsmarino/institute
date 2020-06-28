@@ -3,9 +3,9 @@ title: 'where is the friends house | talking to mother'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 3
-image: '/images/where-is-the-friends-house/where-is-the-friends-house.jpg'
+image: '/images/where-is-the-friends-house/where.jpg'
 ---
-
+![where is the friends house](/images/where-is-the-friends-house/where.jpg)
 Commodo esse in in dolor culpa. Eiusmod do dolore nisi minim enim sint ut id nisi incididunt. Cupidatat adipisicing est eu ipsum mollit commodo eiusmod esse aliqua cupidatat dolor elit sint minim. Labore commodo excepteur occaecat officia cillum occaecat adipisicing dolor culpa aliqua non aute. Quis sit laboris aliqua reprehenderit ad ipsum exercitation amet est cupidatat sint proident dolor culpa. Id esse velit et veniam. Dolor nulla laboris qui eiusmod non quis elit.
 
 Tempor ad pariatur est enim sunt amet reprehenderit ipsum magna mollit irure laborum esse. Ipsum id incididunt incididunt in dolor excepteur occaecat incididunt excepteur ex culpa minim amet consectetur. Fugiat adipisicing occaecat qui duis mollit irure qui dolor proident duis aliquip cupidatat consequat sint. Et laborum amet ea labore amet eu laboris mollit ea. Amet excepteur id ipsum cillum ex sit nulla ad anim. Incididunt deserunt fugiat irure sit consequat officia nisi tempor irure labore magna. Laboris cupidatat enim culpa incididunt non anim aliqua et.

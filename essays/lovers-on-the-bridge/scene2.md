@@ -3,10 +3,12 @@ title: 'lovers on the bridge | next scene'
 date: '2020-01-05'
 author: 'Guy Yard'
 sort: 3
-image: '/images/lovers-on-the-bridge/lovers-on-the-bridge.jpg'
+image: '/images/lovers-on-the-bridge/fireworks.jpg'
 ---
-
+## fireworks
 Cillum nisi esse exercitation ipsum enim incididunt. Labore excepteur Lorem dolore deserunt in duis. Dolor elit ea laborum exercitation.
+
+![image test](/images/lovers-on-the-bridge/fireworks.jpg)
 
 Eiusmod dolore nulla amet aliqua ut dolore qui. Elit fugiat fugiat ea dolore tempor tempor. Dolor mollit commodo quis aliqua eiusmod eiusmod minim aliquip cupidatat.
 

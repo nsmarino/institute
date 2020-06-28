@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
 
 import styles from './header.module.css'
 
@@ -30,10 +29,3 @@ const Header = ({ navVis, handleNavClick }) => {
   }
 
 export default Header
-
-// .navContainer {
-//   position: fixed;
-// }
-// .nav {
-//   position: absolute;
-// }

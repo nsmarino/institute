@@ -1,7 +1,7 @@
 
 .essayGrid {
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 20% 60% 20%;
 }
 
 .essayContent {
@@ -39,3 +39,22 @@
     color: white;
     font-size: large;
 }
+
+@media only screen and (max-width: 900px) {
+    .previous, .next {
+      display: none;    
+    }
+
+    .essayGrid {
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+    .essayGrid {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+    }
+  }

@@ -34,7 +34,7 @@ export default function Layout({ children }) {
 
       <div className={styles.app}>
       <Header navVis={navVis} handleNavClick={handleNavClick} />
-      <main className={styles.container}>{children}</main>
+      <main>{children}</main>
       </div>
     </div>
   )

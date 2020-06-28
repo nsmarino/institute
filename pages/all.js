@@ -9,6 +9,8 @@ import IndexLink from '../components/IndexLink'
 // INTERNAL LIBRARIES -
 import { EssayDataForIndex } from '../lib/essayLib'
 
+// This is currently preserved 'just in case' but will likely not be used in the final version -- maybe as search results?
+
 export default function Home({ allEssayData }) {
   const [image, setImage] = useState({source: '/images/taipei-story/taipei-story.jpg', name: null})
 
