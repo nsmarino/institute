@@ -3,10 +3,6 @@ import { useState, useRef, useEffect } from 'react'
 
 import styles from './Timeline.module.css'
 
-// RUNS TERRIBLY AND IS COMPLICATED AND WORDY -- BUT IT WORKS.
-// - find source of sluggishness
-// - effect/state hooks instead of ref hooks?
-
 export default function Timeline({essayData, navData}) {
 
   // sets timeline CSS to 'sticky' on scroll

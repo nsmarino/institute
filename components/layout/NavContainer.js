@@ -1,5 +1,5 @@
 import Nav from './Nav'
-import styles from './navcontainer.module.css'
+import styles from './NavContainer.module.css'
 
 const NavContainer = ({ handleClick, vis }) => {
   return (

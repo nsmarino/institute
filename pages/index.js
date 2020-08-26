@@ -63,3 +63,12 @@ export async function getStaticProps() {
 // 11. about page
 // 12. clean up, iterate, refactor...how to organize css? MAKE VERY CLEAN! COMMENTS AND D.R.Y.!
 
+
+// FEATURES -
+// - Static site generation with NextJS
+// - Custom JavaScript timeline component for navigating essays
+// - Responsive design
+// - Emphasis on readable text on both desktop and mobile platforms
+// - Intuitive content management using markdown and git
+// - Use of CSS modules for styling
+// - Image optimization ???
