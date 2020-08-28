@@ -3,10 +3,6 @@ import { useState, useRef, useEffect } from 'react'
 
 import styles from './Timeline.module.css'
 
-// Refactor everything from mouse events into pointer events.
-// handle mouse events and touch events differently. ciao!
-// pointer types: mouse, pen, touch, "" (unrecognized pointer)
-
 export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // sets timeline CSS to 'sticky' on scroll
@@ -17,8 +13,8 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
   const blocksRef = useRef()
   const [blockSpans, setBlockSpans] = useState([])
 
-  // governs preview image and location
-  // const [preview, setPreview] = useState(null)
+  // governs preview and marker location
+  // preview and setPreview is controlled at page level so onClick can toggle vis on mobile
   const [previewLocation, setPreviewLocation] = useState('')
   const [isEdge, setIsEdge] = useState(false)
   const [edgeMarkerLocation, setEdgeMarkerLocation] = useState('')
@@ -73,7 +69,6 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // Controls location of preview thumbnail based on mouse/pointer position
   const updateMouseX = e => {
-    // e.target.setPointerCapture(e.pointerId)
     const rightEdge = Math.min(document.documentElement.clientWidth, window.innerWidth) // account for scrollbar
     const mouseLocation = e.clientX
     const matchingBlock = findMatchingBlock(mouseLocation)
@@ -94,11 +89,6 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
   const handlePointerLeave = (event) => {
     if (event.pointerType === "mouse") setPreview(null)
   }
-
-  // const handleLostPointerCapture = (event) => {
-  //   // if (event.pointerType !== "mouse") setPreview(null)
-  //   console.log('navigate to', preview)
-  // }
 
   const showTimeline = () => {
     return navData.map(block =>

@@ -14,9 +14,6 @@ export default function Layout({ children }) {
   }
 
   const handleAppClick = (e) => {
-    if (e.target.classList.contains('box') 
-        || e.target.classList.contains('lineOne') 
-        || e.target.classList.contains('lineTwo')) return;
     setNavVis(false)
   }
 

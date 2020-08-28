@@ -1,6 +1,13 @@
 const Hamburger = ({ handleClick, vis}) => {
   return (
-  <div style={{width: '2rem', marginLeft: '1rem', cursor: 'pointer'}} onClick={handleClick}>
+  <div 
+    style={{
+      width: '2rem', 
+      marginLeft: '1rem', 
+      cursor: 'pointer', 
+      display: 'flex', }} 
+    onClick={handleClick}
+  >
     {
     vis ?    
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">

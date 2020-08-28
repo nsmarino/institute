@@ -1,4 +1,4 @@
-# Institute of Temporal Film Studies
+# Center for Temporal Film Studies
 
 Custom blog for in-depth film analysis, designed around scrubbable timeline navigation bar.
 
