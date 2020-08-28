@@ -31,10 +31,13 @@ export default function EssayPage({ essayData, navData }) {
     null
 
   return (
-  <div onClick={() => {
-    console.log('click on page div')
-    setPreview(null)
-  }}>
+  <div
+    style={{ touchAction: "none" }} // mobile browser will not cancel pointermove event 
+    onClick={() => {
+      console.log('click on page div')
+      setPreview(null)
+    }}
+  >
   <Head>
     <title>{essayData.title}</title>
     <link rel="icon" href="/favicon.ico" />
