@@ -10,24 +10,26 @@ export default function Card({ essay }) {
   return (
   <Link href='essays/[dir]/[id]' as={`essays/${essay.dir}/${essay.id}`}>
   <a className={styles.cardLink}>
-    <div className={styles.card} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-
-    {/* NO LONGER IN USE: IMAGE INSTEAD DISPLAYED AS 
-        BKGRND IMG ON DIV FOR CENTERING PURPOSES */}
-    {/* <img src={essay.image} alt={essay.title} className={hover ? styles.hoverImage : styles.cardImage} /> */}
+    <div 
+      className={styles.card} 
+      onMouseEnter={() => setHover(true)} 
+      onMouseLeave={() => setHover(false)}
+      onTouchStart={() => setHover(true)} 
+      onTouchEnd={() => setHover(false)}
+    >
       
-      <div style={{
-  width: '100%',
-  height: '100%',
-  backgroundImage: `url(${essay.image})`, 
-  opacity,
-  backgroundPosition: 'center', 
-  backgroundSize: '100%', 
-  backgroundRepeat: 'no-repeat',
-  gridColumn: 1,
-  gridRow: 1,
-  }
-}></div>
+    <div style={{
+      width: '100%',
+      height: '100%',
+      backgroundImage: `url(${essay.image})`, 
+      opacity,
+      backgroundPosition: 'center', 
+      backgroundSize: '100%', 
+      backgroundRepeat: 'no-repeat',
+      gridColumn: 1,
+      gridRow: 1,
+    }}>
+    </div>
 
       <div className={styles.titleHolder}>
         <h2 className={hover ? styles.hoverTitle : styles.cardTitle}>

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import styles from './header.module.css'
 
 import NavContainer from './NavContainer'
-import SearchContainer from './SearchContainer'
 
 const Header = ({ navVis, handleNavClick }) => {
 
@@ -12,18 +11,16 @@ const Header = ({ navVis, handleNavClick }) => {
 
       {/* one */}
       <NavContainer handleClick={handleNavClick} vis={navVis} />
-
+      
       {/* two */}
-      <div className={styles.nameOfSite}>
+      <div>
         <Link href="/">
           <a className={styles.link}>
-            <h1 className={styles.logo}>center for temporal film studies</h1>
+            <h1 className={styles.siteName}>center for temporal film studies</h1>
           </a>
         </Link>
       </div>
       
-      {/* three */}
-      <SearchContainer />
       </header>
     )
   }

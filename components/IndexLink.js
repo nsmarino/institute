@@ -1,14 +1,17 @@
 import Link from 'next/link'
+import styles from './IndexLink.module.css'
 
 export default function IndexLink({ essay, handleHover }) {
   return (
     <div onMouseOver={() => handleHover(essay)}>
-      <li>
+      <li className={styles.listItem}>
         <Link href='essays/[dir]/[id]' as={`essays/${essay.dir}/${essay.id}`}>
-          <a>{essay.title}</a>       
+          <a className={styles.link}>
+            {essay.title}
+          </a>       
         </Link>
       </li>
-      <style jsx>{`
+      {/* <style jsx>{`
         li {
           list-style-type: none;
           line-height: 2.5em;
@@ -21,7 +24,7 @@ export default function IndexLink({ essay, handleHover }) {
         a:hover {
           color: #444
         }
-      `}</style>
+      `}</style> */}
     </div>
   )
 }

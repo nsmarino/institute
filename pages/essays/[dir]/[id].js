@@ -1,6 +1,9 @@
 // Framework:
+import { useState } from 'react'
+
 import Head from 'next/head'
 import Link from 'next/link'
+
 
 // Styling:
 import styles from './essay.module.css'
@@ -13,6 +16,8 @@ import Timeline from '../../../components/Timeline'
 import { getEssayPageIds, getEssayPageData, getEssayNavData } from "../../../lib/essayLib"
 
 export default function EssayPage({ essayData, navData }) {
+  const [preview, setPreview] = useState(null)
+
   const currentPageIndex = navData.findIndex(page => page.id===essayData.id)
     
   const previousPage = currentPageIndex !== 0 ?
@@ -26,14 +31,14 @@ export default function EssayPage({ essayData, navData }) {
     null
 
   return (
-  <div>
+  <div onClick={() => setPreview(null)}>
   <Head>
     <title>{essayData.title}</title>
     <link rel="icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"></link>
   </Head>
   <Layout>
-    <Timeline essayData={essayData} navData={navData} />
+    <Timeline essayData={essayData} navData={navData} preview={preview} setPreview={setPreview} />
 
 <div className={styles.essayGrid}>
   <div className={styles.previous}>
@@ -72,7 +77,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const essayData = await getEssayPageData(params.dir, params.id)
-    // const navData
     const navData = await getEssayNavData(params.dir)
     return {
         props: {

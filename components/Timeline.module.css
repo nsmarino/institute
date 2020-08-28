@@ -21,16 +21,13 @@
     height: 2em;
 }
 
-.navContainer {
+.timelineContainer {
     display: grid;
     border-top: 2px solid #333;
 }
 
-.nav, .filmTitle {
+.timeline {
     grid-area: 1/1/2/2;
-  }
-
-.nav {
     display: flex;
     width: 100vw;
     flex-direction: row;
@@ -70,23 +67,3 @@
   height: 2rem;
   background-color: #333;
 }
-
-/* .testMarker {
-  width: .25rem;
-  height: 2rem;
-  background-color: #333;
-  position: absolute;
-  top: 0em;
-} */
-
-/* .edgeMarkerFlexbox {
-  height: 2rem;
-  position: absolute;
-  top: -2rem;
-}
-
-.edgeMarker {
-  width: .25rem;
-  height: 2rem;
-  background-color: red;
-} */

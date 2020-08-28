@@ -3,7 +3,11 @@ import { useState, useRef, useEffect } from 'react'
 
 import styles from './Timeline.module.css'
 
-export default function Timeline({essayData, navData}) {
+// Refactor everything from mouse events into pointer events.
+// handle mouse events and touch events differently. ciao!
+// pointer types: mouse, pen, touch, "" (unrecognized pointer)
+
+export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // sets timeline CSS to 'sticky' on scroll
   const [sticky, setSticky] = useState(false)
@@ -14,13 +18,12 @@ export default function Timeline({essayData, navData}) {
   const [blockSpans, setBlockSpans] = useState([])
 
   // governs preview image and location
-  const [preview, setPreview] = useState(null)
+  // const [preview, setPreview] = useState(null)
   const [previewLocation, setPreviewLocation] = useState('')
   const [isEdge, setIsEdge] = useState(false)
   const [edgeMarkerLocation, setEdgeMarkerLocation] = useState('')
 
-  // Scroll handling
-  // this has a hardcoded value of '32' still -- should be changed before deployment
+  // Handle timeline sticky:
   const handleScroll = () => {
     if (scrollRef.current) {
       if (scrollRef.current.getBoundingClientRect().top <= 0) {
@@ -39,7 +42,7 @@ export default function Timeline({essayData, navData}) {
     };
   }, []);
 
-  // Width handling
+  // Gets size for timeline blocks:
   const getBlockLocations = () => {
     const blockLocations = []
     blocksRef.current.childNodes.forEach(block => {
@@ -60,6 +63,7 @@ export default function Timeline({essayData, navData}) {
     }
   }, [])
 
+  // Called by updateMouseX to find preview image to display:
   const findMatchingBlock = (x) => {
     // supposedly a simple FOR LOOP is way more performant than array.find() ???
     const matchingSpan = blockSpans.find(block => block.left <= x && x < block.right)
@@ -67,7 +71,9 @@ export default function Timeline({essayData, navData}) {
     return navData[spanIndex]
   }
 
+  // Controls location of preview thumbnail based on mouse/pointer position
   const updateMouseX = e => {
+    // e.target.setPointerCapture(e.pointerId)
     const rightEdge = Math.min(document.documentElement.clientWidth, window.innerWidth) // account for scrollbar
     const mouseLocation = e.clientX
     const matchingBlock = findMatchingBlock(mouseLocation)
@@ -85,34 +91,52 @@ export default function Timeline({essayData, navData}) {
     setEdgeMarkerLocation(adjustedLocation.marker)
   }
 
+  const handlePointerLeave = (event) => {
+    if (event.pointerType === "mouse") setPreview(null)
+  }
+
+  // const handleLostPointerCapture = (event) => {
+  //   // if (event.pointerType !== "mouse") setPreview(null)
+  //   console.log('navigate to', preview)
+  // }
+
   const showTimeline = () => {
     return navData.map(block =>
-      <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${block.id}`} key={block.id}>
-
-      <div 
-          className={block.id === essayData.id ? styles.currentBlock : styles.block} 
-          onMouseMove={() => updateMouseX(event)}
-        >
-        </div>
+      <Link 
+        href='/essays/[dir]/[id]' 
+        as={`/essays/${essayData.dir}/${block.id}`} 
+        key={block.id}
+      >
+        <div 
+            className={block.id === essayData.id ? styles.currentBlock : styles.block} 
+            onPointerMove={() => updateMouseX(event)}
+        ></div>
 
       </Link>
       )
     }
 
   return (
-    <div ref={scrollRef} className={sticky ? styles.sticky : ''} onMouseLeave={() => setPreview(null)} >
-      <div className={styles.navContainer}>
-        <div className={styles.nav} ref={blocksRef}>
+    <div 
+      ref={scrollRef} 
+      className={sticky ? styles.sticky : ''}
+      onPointerLeave={() => handlePointerLeave(event)}
+    >
+      <div className={styles.timelineContainer}>
+        <div className={styles.timeline} ref={blocksRef}>
           {showTimeline()}
         </div>
       </div>
 
       { preview ?
+      // Thumbnail image:
       <div className={styles.thumbnailContainer} 
-           style={{left: previewLocation,}} 
-           onMouseMove={() => updateMouseX(event)}
-           >
+        style={{left: previewLocation,}} 
+        onPointerMove={() => updateMouseX(event)}
+        >
 
+        {/* Marker is centered above thumbnail on timeline 
+         except when thumbnail is against edge of window */}
         {isEdge ?
           <div style={{
             width:'3px',
@@ -130,7 +154,11 @@ export default function Timeline({essayData, navData}) {
 
         <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${preview.id}`}>
           <a>
-            <img src={preview.image} alt={preview.alt} className={styles.thumbnail} />
+            <img 
+              src={preview.image} 
+              alt={preview.alt} 
+              className={styles.thumbnail} 
+            />
           </a>
         </Link>
       </div>
