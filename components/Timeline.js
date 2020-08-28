@@ -69,7 +69,6 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // Controls location of preview thumbnail based on mouse/pointer position
   const updateMouseX = e => {
-    e.preventDefault()
 
     const rightEdge = Math.min(document.documentElement.clientWidth, window.innerWidth) // account for scrollbar
     const mouseLocation = e.clientX
@@ -98,6 +97,7 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
         href='/essays/[dir]/[id]' 
         as={`/essays/${essayData.dir}/${block.id}`} 
         key={block.id}
+        
       >
         <div 
             className={block.id === essayData.id ? styles.currentBlock : styles.block} 
@@ -113,6 +113,7 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
       ref={scrollRef} 
       className={sticky ? styles.sticky : ''}
       onPointerLeave={() => handlePointerLeave(event)}
+      style={{ touchAction: "none" }}
     >
       <div className={styles.timelineContainer}>
         <div className={styles.timeline} ref={blocksRef}>
@@ -124,7 +125,7 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
       // Thumbnail image:
       <div className={styles.thumbnailContainer} 
         style={{left: previewLocation,}}
-        onPointerDown={() => console.log(event)} 
+        //onPointerDown={() => console.log('pointerDown')} 
         onPointerMove={() => updateMouseX(event)}
       >
 
@@ -150,7 +151,7 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
             <img 
               src={preview.image} 
               alt={preview.alt} 
-              className={styles.thumbnail} 
+              className={`thumbnailLink ${styles.thumbnail}`} 
             />
           </a>
         </Link>

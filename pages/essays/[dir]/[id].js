@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import Head from 'next/head'
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 
 // Styling:
 import styles from './essay.module.css'
@@ -16,6 +16,7 @@ import Timeline from '../../../components/Timeline'
 import { getEssayPageIds, getEssayPageData, getEssayNavData } from "../../../lib/essayLib"
 
 export default function EssayPage({ essayData, navData }) {
+  const router = useRouter()
   const [preview, setPreview] = useState(null)
 
   const currentPageIndex = navData.findIndex(page => page.id===essayData.id)
@@ -30,13 +31,26 @@ export default function EssayPage({ essayData, navData }) {
       :
     null
 
+  const handleClick = () => {
+      // onClick instead of onPointerDown because 
+      // pointerdown is called first on mobile. 
+      // pointerdown triggers link; onClick closes thumbnail
+      setPreview(null)
+  }
+
+  const handlePointerDownCapture = (event) => {
+    // This is needed for selecting by preview on mobile --
+    // If we dont capture pointerdown event here, then updateMouseX
+    // in Timeline.js will be called before the link fires.
+    if(event.target.classList.contains('thumbnailLink')) {
+      router.push(`/essays/[dir]/[id]`,`/essays/${essayData.dir}/${preview.id}`)
+    }    
+  }
+
   return (
   <div
-    style={{ touchAction: "none" }} // mobile browser will not cancel pointermove event 
-    onClick={() => {
-      console.log('click on page div')
-      setPreview(null)
-    }}
+    onClick={handleClick}
+    onPointerDownCapture={() => handlePointerDownCapture(event)}
   >
   <Head>
     <title>{essayData.title}</title>
