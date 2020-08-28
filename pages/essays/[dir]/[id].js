@@ -31,7 +31,10 @@ export default function EssayPage({ essayData, navData }) {
     null
 
   return (
-  <div onClick={() => setPreview(null)}>
+  <div onClick={() => {
+    console.log('click on page div')
+    setPreview(null)
+  }}>
   <Head>
     <title>{essayData.title}</title>
     <link rel="icon" href="/favicon.ico" />

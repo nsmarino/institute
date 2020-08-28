@@ -69,6 +69,8 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // Controls location of preview thumbnail based on mouse/pointer position
   const updateMouseX = e => {
+    e.preventDefault()
+
     const rightEdge = Math.min(document.documentElement.clientWidth, window.innerWidth) // account for scrollbar
     const mouseLocation = e.clientX
     const matchingBlock = findMatchingBlock(mouseLocation)
@@ -121,9 +123,10 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
       { preview ?
       // Thumbnail image:
       <div className={styles.thumbnailContainer} 
-        style={{left: previewLocation,}} 
+        style={{left: previewLocation,}}
+        onPointerDown={() => console.log(event)} 
         onPointerMove={() => updateMouseX(event)}
-        >
+      >
 
         {/* Marker is centered above thumbnail on timeline 
          except when thumbnail is against edge of window */}
