@@ -44,13 +44,11 @@ export async function getStaticProps() {
   }
 }
 
-// Starting 8/27:
-// add emotion css to project and re-factor all css into emotion-styled-components
-// bugfix menu open/close
-// responsive design: timeline
+// By Sept 1?
+// clean up pointer event code on timeline
 // responsive design: prev/next buttons
 // image optimization
 // ABOUT page
-// search functionality - refactor the "ALL" page into search results; load image if hover for more than 1 second
-// testing?
+// COLLECTIONS page
+// improve essay layout, article design
 

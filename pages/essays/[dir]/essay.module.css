@@ -15,41 +15,26 @@
     width: 100%;
 }
 
+.btn {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #222;
+    background-color: transparent;
+    border: none;
+}
+
 .previous {
-    color: white;
-    background-color: #222;
     position: fixed;
     top: 50%;
     left: 10%;
 }
 
-.previous:hover {
-    background:  linear-gradient(#e66465, #9198e5);
-}
 
 .next {
-  color: white;
-  background-color: #222;
   position: fixed;
   top: 50%;
   left: 90%;
 }
-
-.previous a, .next a {
-    color: white;
-    font-size: large;
-}
-
-@media only screen and (max-width: 900px) {
-    .previous, .next {
-      display: none;    
-    }
-
-    .essayGrid {
-        display: grid;
-        grid-template-columns: 10% 80% 10%;
-    }
-  }
 
   @media only screen and (min-width: 1200px) {
 
@@ -57,4 +42,25 @@
         display: grid;
         grid-template-columns: 30% 40% 30%;
     }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .essayGrid {
+      grid-template-columns: 5% 90% 5%;
+    }
+    .previous {
+        position: fixed;
+        bottom: 0;
+        top: unset;
+        left: unset;
+    }
+
+    .next {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        top: unset;
+        left: unset;
+    }
+
   }

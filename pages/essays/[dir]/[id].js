@@ -62,23 +62,28 @@ export default function EssayPage({ essayData, navData }) {
     <Timeline essayData={essayData} navData={navData} preview={preview} setPreview={setPreview} />
 
 <div className={styles.essayGrid}>
+
+{/* PREVIOUS */}
   <div className={styles.previous}>
   { previousPage ?
     <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
-      <a>previous</a>
+      <a><button className={styles.btn}>←</button></a>
     </Link>  
   : null }
   </div>
+
   {/* PAGE CONTENT: */}
     <div 
     dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}
     className={styles.essayContent}
     />
     
+    {/* NEXT */}
   <div className={styles.next}>
   { nextPage ?
     <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${nextPage}`}>
-      <a>next</a>
+      <a>
+        <button className={styles.btn}>→</button></a>
     </Link>
     : null } 
     </div>  

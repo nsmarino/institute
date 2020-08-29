@@ -15,11 +15,6 @@ const Nav = () => {
         </Link>
       </li>
       <li>
-      <Link href="/all">
-          <a>all films</a>
-        </Link>
-      </li>
-      <li>
       <Link href="/about">
           <a>collections</a>
         </Link>
@@ -30,7 +25,7 @@ const Nav = () => {
     .nav {
           position: absolute;
           z-index: 100;
-          background-color: #F9F5E9;
+          background-color: whitesmoke;
           border: 2px solid #333;
           width: 16em;
         }
@@ -45,10 +40,11 @@ const Nav = () => {
           display: block;
           padding: .25em;
           font-size: 1.25em;
-          border-top: 1px solid #ebe7dd;
+          /* border-top: 1px solid #ebe7dd; */
         }
         a:hover, a:active {
-          background-color: #ebe7dd
+          /* background-color: #ebe7dd */
+          background-color: white;
         }
       `}</style>
   </div>
