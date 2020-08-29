@@ -46,7 +46,6 @@ export async function getStaticProps() {
 
 // By Sept 1?
 // clean up pointer event code on timeline
-// responsive design: prev/next buttons
 // image optimization
 // ABOUT page
 // COLLECTIONS page

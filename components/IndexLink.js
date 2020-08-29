@@ -11,20 +11,6 @@ export default function IndexLink({ essay, handleHover }) {
           </a>       
         </Link>
       </li>
-      {/* <style jsx>{`
-        li {
-          list-style-type: none;
-          line-height: 2.5em;
-        }
-        a {
-          color: black;
-          text-decoration: none;
-          font-size: 2rem; 
-        } 
-        a:hover {
-          color: #444
-        }
-      `}</style> */}
     </div>
   )
 }
