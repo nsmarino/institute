@@ -1,12 +1,16 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 import { useState, useRef, useEffect } from 'react'
 
 import styles from './Timeline.module.css'
 
 export default function Timeline({essayData, navData, preview, setPreview}) {
+  const router = useRouter()
 
   // sets timeline CSS to 'sticky' on scroll
   const [sticky, setSticky] = useState(false)
+  const [mobileSceneSelect, setMobileSceneSelect] = useState(false)
   const scrollRef = useRef()
 
   // allows us to update preview image even when not hovering timeline blocks
@@ -69,7 +73,6 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // Controls location of preview thumbnail based on mouse/pointer position
   const updateMouseX = e => {
-
     const rightEdge = Math.min(document.documentElement.clientWidth, window.innerWidth) // account for scrollbar
     const mouseLocation = e.clientX
     const matchingBlock = findMatchingBlock(mouseLocation)
@@ -125,8 +128,21 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
       // Thumbnail image:
       <div className={styles.thumbnailContainer} 
         style={{left: previewLocation,}}
-        //onPointerDown={() => console.log('pointerDown')} 
-        onPointerMove={() => updateMouseX(event)}
+        onPointerDown={() => {
+          if (preview && event.pointerType !== "mouse") {
+            console.log('fired on mobile when tapping on preview')
+            setMobileSceneSelect(true)
+          }
+        }} 
+        onPointerMove={() => {
+          if (mobileSceneSelect) {
+            console.log('mobile scene select')
+            setMobileSceneSelect(false)
+            setPreview(null)
+          } else {
+            updateMouseX(event)
+          }
+          }}
       >
 
         {/* Marker is centered above thumbnail on timeline 
