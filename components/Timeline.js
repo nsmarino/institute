@@ -10,8 +10,10 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
 
   // sets timeline CSS to 'sticky' on scroll
   const [sticky, setSticky] = useState(false)
-  const [mobileSceneSelect, setMobileSceneSelect] = useState(false)
   const scrollRef = useRef()
+
+  // flag used for mobile scene select via timeline
+  const [mobileSceneSelect, setMobileSceneSelect] = useState(false)
 
   // allows us to update preview image even when not hovering timeline blocks
   const blocksRef = useRef()
@@ -130,13 +132,11 @@ export default function Timeline({essayData, navData, preview, setPreview}) {
         style={{left: previewLocation,}}
         onPointerDown={() => {
           if (preview && event.pointerType !== "mouse") {
-            console.log('fired on mobile when tapping on preview')
             setMobileSceneSelect(true)
           }
         }} 
         onPointerMove={() => {
           if (mobileSceneSelect) {
-            console.log('mobile scene select')
             setMobileSceneSelect(false)
             setPreview(null)
           } else {

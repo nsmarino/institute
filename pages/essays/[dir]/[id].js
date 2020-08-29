@@ -42,7 +42,6 @@ export default function EssayPage({ essayData, navData }) {
     // This is needed for selecting by preview on mobile --
     // If we dont capture pointerdown event here, then updateMouseX
     // in Timeline.js will be called before the link fires.
-    console.log(preview)
     if(event.target.classList.contains('thumbnailLink')) {
       router.push(`/essays/[dir]/[id]`,`/essays/${essayData.dir}/${preview.id}`)
     }    

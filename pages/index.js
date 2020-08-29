@@ -44,10 +44,10 @@ export async function getStaticProps() {
   }
 }
 
-// By Sept 1?
-// clean up pointer event code on timeline
 // image optimization
-// ABOUT page
+
+// After taking a break to finish Reed Events:
+// clean up pointerEvent code
 // COLLECTIONS page
-// improve essay layout, article design
+// fine-tune essay layout and overall design
 
