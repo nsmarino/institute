@@ -2,7 +2,7 @@
 
 Custom blog for in-depth film analysis, designed around scrubbable timeline navigation bar.
 
-[Visit](https://institute-tau.vercel.app/)
+[Visit](https://studiesfilm.vercel.app/)
 
 ## Content
 
