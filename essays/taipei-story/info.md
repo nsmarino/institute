@@ -6,4 +6,16 @@ sort: 1
 image: '/images/taipei-story/taipei-story.jpg'
 ---
 
-INFO PAGE
+# Taipei Story
+
+<section>
+Edward Yang
+
+Taiwan
+
+1985
+
+110 minutes
+
+Mandarin, Hokkien
+</section>

@@ -6,4 +6,16 @@ sort: 1
 image: '/images/brighter-summer-day/brightersummer.jpg'
 ---
 
-INFO PAGE...Film, year, country, runtime?, director, stars...brief synopsis?
+# A Brighter Summer Day
+
+<section>
+Edward Yang
+
+Taiwan
+
+1991
+
+237 minutes
+
+Mandarin, Taiwanese
+</section>
