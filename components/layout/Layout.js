@@ -4,7 +4,7 @@ import styles from './layout.module.css'
 
 import Header from './Header'
 
-export const siteTitle = 'Center for temporal film studies'
+export const siteTitle = 'studies.film'
 
 export default function Layout({ children }) {
   const [navVis, setNavVis] = useState(false)

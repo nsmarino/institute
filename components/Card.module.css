@@ -4,8 +4,8 @@
 }
 
 .card {
-    width: 25rem;
-    height: 13.5rem;
+    width: 40rem;
+    height: 20rem;
 
     color: #333;
     display: grid;
@@ -32,3 +32,17 @@
     margin: 0;
     color: #F9F5E9;
 }
+
+@media only screen and (min-width: 950px) {
+    .card {
+      width: 60rem;
+      height: 30rem;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card {
+      width: 100vw;
+      height: 25vh;
+    }
+  }

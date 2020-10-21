@@ -13,7 +13,7 @@ export default function Home({ allEssayData }) {
   return (
     <div className="container">
     <Head>
-        <title>center for temporal film studies</title>
+        <title>studies.film</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <Layout>

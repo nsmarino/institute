@@ -16,7 +16,7 @@ const Header = ({ navVis, handleNavClick }) => {
       <div>
         <Link href="/">
           <a className={styles.link}>
-            <h1 className={styles.siteName}>center for temporal film studies</h1>
+            <h1 className={styles.siteName}>studies.film</h1>
           </a>
         </Link>
       </div>
