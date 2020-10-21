@@ -6,6 +6,8 @@ sort: 3
 image: '/images/the-wind-rises/oxen.jpg'
 ---
 
+## between past and future
+
 ![wind rises](/images/the-wind-rises/oxen.jpg)
 Eu adipisicing exercitation consectetur sit eu officia. Duis culpa tempor amet consectetur veniam incididunt culpa. Est do magna veniam reprehenderit laborum amet exercitation excepteur sint quis ullamco exercitation. Quis aute nostrud eu magna mollit nisi minim ipsum id sit sint ut Lorem.
 ![wind rises](/images/the-wind-rises/plane.jpg)

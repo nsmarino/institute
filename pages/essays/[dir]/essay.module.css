@@ -39,6 +39,10 @@
     border: none;
 }
 
+.btn:hover {
+  color: red;
+}
+
 .previous {
     position: fixed;
     top: 50%;

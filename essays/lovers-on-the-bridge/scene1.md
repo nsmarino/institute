@@ -5,7 +5,7 @@ author: 'Guy Yard'
 sort: 2
 image: '/images/lovers-on-the-bridge/lovers-on-the-bridge.jpg'
 ---
-## lovers on the bridge
+## the bridge
 Eu adipisicing exercitation consectetur sit eu officia. Duis culpa tempor amet consectetur veniam incididunt culpa. Est do magna veniam reprehenderit laborum amet exercitation excepteur sint quis ullamco exercitation. Quis aute nostrud eu magna mollit nisi minim ipsum id sit sint ut Lorem.
 
 ![image test](/images/lovers-on-the-bridge/lovers-on-the-bridge.jpg)
