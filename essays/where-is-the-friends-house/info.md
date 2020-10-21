@@ -6,7 +6,7 @@ sort: 1
 image: '/images/where-is-the-friends-house/where-is-the-friends-house.jpg'
 ---
 
-# Where is the Friend's House?
+# Where is the Friends House?
 
 <section>
 Abbas Kiarostami

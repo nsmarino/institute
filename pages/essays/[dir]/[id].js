@@ -62,14 +62,14 @@ export default function EssayPage({ essayData, navData }) {
 
 <div className={styles.essayGrid}>
 
-{/* PREVIOUS */}
-  <div className={styles.previous}>
-  { previousPage ?
-    <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
-      <a><button className={styles.btn}>←</button></a>
-    </Link>  
-  : null }
-  </div>
+  {/* PREVIOUS */}
+    <div className={styles.previous}>
+    { previousPage ?
+      <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${previousPage}`}>
+        <a><button className={styles.btn}>←</button></a>
+      </Link>  
+      : null }
+    </div>
 
   {/* PAGE CONTENT: */}
     <div 
@@ -77,17 +77,20 @@ export default function EssayPage({ essayData, navData }) {
     className={styles.essayContent}
     />
     
-    {/* NEXT */}
-  <div className={styles.next}>
-  { nextPage ?
-    <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${nextPage}`}>
-      <a>
-        <button className={styles.btn}>→</button></a>
-    </Link>
-    : null } 
-    </div>  
-</div>
-</Layout>
+  {/* NEXT */}
+    <div className={styles.next}>
+      { nextPage ?
+        <Link href='/essays/[dir]/[id]' as={`/essays/${essayData.dir}/${nextPage}`}>
+          <a>
+            <button className={styles.btn}>→</button>
+          </a>
+        </Link>
+      : null } 
+    </div>
+
+  </div>
+
+  </Layout>
 </div>
 )
 }
