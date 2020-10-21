@@ -4,6 +4,7 @@ import Head from 'next/head'
 // COMPONENTS -
 import Layout from '../components/layout/Layout'
 import Card from '../components/Card'
+import Footer from '../components/Footer'
 
 // INTERNAL LIBRARIES -
 import { EssayDataForIndex } from '../lib/essayLib'
@@ -20,6 +21,7 @@ export default function Home({ allEssayData }) {
       <div className="cardFlex">
         {allEssayData.map(essay => <Card essay={essay} key={essay.title} />)}
       </div>
+      <Footer />
     </Layout>
 
     <style jsx>{` 

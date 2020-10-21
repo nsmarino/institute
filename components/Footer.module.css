@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer a {
+    color: black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer a:hover {
+    color: red;
+}
